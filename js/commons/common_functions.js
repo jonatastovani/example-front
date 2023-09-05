@@ -54,3 +54,13 @@ function validaCNPJ(NumCNPJ) {
     
     return calcDigVerificador(12) && calcDigVerificador(13);
 }
+
+function mascaraTelefone(numeroEnviado, seletor) {
+    let numero = numeroEnviado.replace(/\D/g, '');
+
+    if(numero.length<11){
+        $(seletor).mask('(00) 0000-00009');
+    }else{
+        $(seletor).mask('(00) 0 0000-0009');
+    }
+}
